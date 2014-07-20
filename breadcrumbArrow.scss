@@ -3,7 +3,7 @@
 /* ::: B R E A D C R U M B   A R R O W  ::: */
 /* ---------------------------------------- */
 
-$breadcrumbArrow: $breadcrumbHeight / 2;
+$breadcrumbArrowHeight: $breadcrumbHeight / 2;
 $breadcrumbPadding: $breadcrumbHeight / 4;
 
 .breadcrumb {
@@ -35,18 +35,18 @@ $breadcrumbPadding: $breadcrumbHeight / 4;
 
     &:before {
         content: "";  
-        border-top: $breadcrumbArrow solid transparent;
-        border-bottom: $breadcrumbArrow solid transparent;
-        border-left: $breadcrumbArrow solid $breadcrumbArrowColor;
+        border-top: $breadcrumbArrowHeight solid transparent;
+        border-bottom: $breadcrumbArrowHeight solid transparent;
+        border-left: $breadcrumbArrowHeight solid $breadcrumbArrowColor;
         @include absolute(0 0); // == position: absolute; top: 0; right: 0
     }
 
     &:after {
         content: "";  
-        border-top: $breadcrumbArrow solid transparent;
-        border-bottom: $breadcrumbArrow solid transparent;
-        border-left: $breadcrumbArrow solid $breadcrumbBackgroundColor;
-        @include absolute(auto 0 ($breadcrumbArrow * -1) ); z-index: 1;
+        border-top: $breadcrumbArrowHeight solid transparent;
+        border-bottom: $breadcrumbArrowHeight solid transparent;
+        border-left: $breadcrumbArrowHeight solid $breadcrumbBackgroundColor;
+        @include absolute(auto 0 ($breadcrumbArrowHeight * -1) ); z-index: 1;
     }
 }
 
