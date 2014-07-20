@@ -1,0 +1,18 @@
+/* #Breadcrumb -arrow */
+/* -------------------*/
+/*
+    <ul class="breadcrumb">
+        <li><a class="breadcrumb_item breadcrumb_item--link" href="#">Home</a></li>
+        <li><a class="breadcrumb_item breadcrumb_item--link" href="#">Category</a></li>
+        <li><span class="breadcrumb_item">Product</span></li>
+    </ul>
+ */
+$breadcrumbHeight: 40px;
+$breadcrumbArrowWidth: 5px;
+$breadcrumbBackgroundColor: $red;
+$breadcrumbBackgroundColorHover: $green;
+$breadcrumbArrowColor: white;
+$breadcrumbTextColor: white;
+$breadcrumbTextColorHover: black;
+
+@import "breadcrumbArrow";
