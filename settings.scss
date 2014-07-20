@@ -10,9 +10,9 @@
 $breadcrumbHeight: 40px;
 $breadcrumbArrowWidth: 5px;
 $breadcrumbBackgroundColor: $red;
-$breadcrumbBackgroundColorHover: $green;
+$breadcrumbBackgroundColorHover: null; // put a color if needed
 $breadcrumbArrowColor: white;
 $breadcrumbTextColor: white;
-$breadcrumbTextColorHover: black;
+$breadcrumbTextColorHover: null; // put a color if needed
 
 @import "breadcrumbArrow";
