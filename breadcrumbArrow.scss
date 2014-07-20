@@ -38,7 +38,7 @@ $breadcrumbPadding: $breadcrumbHeight / 4;
         border-top: $breadcrumbArrowHeight solid transparent;
         border-bottom: $breadcrumbArrowHeight solid transparent;
         border-left: $breadcrumbArrowHeight solid $breadcrumbArrowColor;
-        @include absolute(0 0); // == position: absolute; top: 0; right: 0
+        @include absolute(0 0); // == position: absolute; top: 0; left: 0
     }
 
     &:after {
