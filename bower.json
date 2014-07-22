@@ -3,6 +3,8 @@
   "version": "0.0.1",
   "main": "",
   "ignore": [],
-  "dependencies": {},
+  "dependencies": {
+    "custom-select": "git://github.com/laurentperroteau/custom-select.git",
+  },
   "devDependencies": {}
 }
