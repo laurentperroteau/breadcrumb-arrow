@@ -4,7 +4,7 @@
   "main": "",
   "ignore": [],
   "dependencies": {
-    "custom-select": "git://github.com/laurentperroteau/custom-select.git",
+    "custom-select": "git://github.com/laurentperroteau/custom-select.git"
   },
   "devDependencies": {}
 }
