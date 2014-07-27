@@ -1,0 +1,100 @@
+
+/* ------------------------------ */
+/* ::: Grand Wazoo Breadcrumb ::: */
+/* ------------------------------ */
+
+
+/* The html
+
+    <ul class="breadcrumb">
+        <li><a class="breadcrumb_item breadcrumb_item--link" href="#">Home</a></li>
+        <li><a class="breadcrumb_item breadcrumb_item--link" href="#">Category</a></li>
+        <li><span class="breadcrumb_item">Product</span></li>
+    </ul>
+ */
+
+
+// Default variable
+$gw-ui-breadcrumb-namespace: $gw-namespace !default;
+
+$gw-ui-breadcumb-height: 40px;
+$gw-ui-breadcumb-arrow-width: 5px;
+$gw-ui-breadcumb-background-color: green;
+$gw-ui-breadcumb-background-color-hover: null; // put a color if needed
+$gw-ui-breadcumb-arrow-color: white;
+$gw-ui-breadcumb-text-color: white;
+$gw-ui-breadcumbtext-color-hover: null; // put a color if needed
+
+
+// Calculation
+$gw-ui-breadcumb-arrow-height: $gw-ui-breadcumb-height / 2;
+$gw-ui-breadcumb-padding: $gw-ui-breadcumb-height / 4;
+
+.breadcrumb {
+    @extend %clearfix;
+    background-color: $gw-ui-breadcumb-arrow-color;
+     
+    li { float: left } // todo: voir si extend dans inuit
+
+    li:first-child .breadcrumb_item {
+        padding-left: $gw-ui-breadcumb-padding;
+
+        &:before { display: none }
+    }
+
+    li:last-child .breadcrumb_item {
+        padding-right: $gw-ui-breadcumb-padding;
+
+        &:after { display: none }
+    }
+}
+
+    .breadcrumb_item {
+        position: relative;
+        display: inline-block;
+        //@include alignVertically($gw-ui-breadcumb-height);
+        height: $gw-ui-breadcumb-height; line-height: $gw-ui-breadcumb-height;
+        margin-right: $gw-ui-breadcumb-arrow-width; padding-left: $gw-ui-breadcumb-padding * 3;
+        background-color: $gw-ui-breadcumb-background-color;
+        color: $gw-ui-breadcumb-text-color;
+
+        &:hover { text-decoration: none }
+
+        &:before {
+            content: "";  
+            border-top: $gw-ui-breadcumb-arrow-height solid transparent;
+            border-bottom: $gw-ui-breadcumb-arrow-height solid transparent;
+            border-left: $gw-ui-breadcumb-arrow-height solid $gw-ui-breadcumb-arrow-color;
+            @include absolute(0 0); // == position: absolute; top: 0; left: 0
+        }
+
+        &:after {
+            content: "";  
+            border-top: $gw-ui-breadcumb-arrow-height solid transparent;
+            border-bottom: $gw-ui-breadcumb-arrow-height solid transparent;
+            border-left: $gw-ui-breadcumb-arrow-height solid $gw-ui-breadcumb-background-color;
+            @include absolute(auto 0 ($gw-ui-breadcumb-arrow-height * -1) ); z-index: 1;
+        }
+    }
+
+
+@if $gw-ui-breadcumb-background-color-hover != null {
+
+    .breadcrumb_item--link {
+        text-decoration: none;
+
+        &:hover {
+            background-color: $gw-ui-breadcumb-background-color-hover;
+
+            &:after { border-left-color: $gw-ui-breadcumb-background-color-hover }
+        }
+    }
+
+} // endif
+
+
+@if $gw-ui-breadcumbtext-color-hover != null {
+
+    .breadcrumb_item--link:hover { color: $gw-ui-breadcumbtext-color-hover }
+
+} // endif
