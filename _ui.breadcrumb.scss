@@ -15,91 +15,93 @@
 
 
 // Default variable
-$yupik-ui-breadcrumb-namespace: $yupik-namespace !default;
+$yupik-breadcrumb-namespace: $inuit-namespace !default;
 
-$yupik-ui-breadcumb-height: 40px;
-$yupik-ui-breadcumb-arrow-width: 5px;
-$yupik-ui-breadcumb-background-color: green;
-$yupik-ui-breadcumb-background-color-hover: null; // put a color if needed
-$yupik-ui-breadcumb-arrow-color: white;
-$yupik-ui-breadcumb-text-color: white;
-$yupik-ui-breadcumbtext-color-hover: null; // put a color if needed
+$yupik-breadcumb-height: 40px;
+$yupik-breadcumb-arrow-width: 5px;
+$yupik-breadcumb-background-color: green;
+$yupik-breadcumb-background-color-hover: null; // put a color if needed
+$yupik-breadcumb-arrow-color: white;
+$yupik-breadcumb-text-color: white;
+$yupik-breadcumbtext-color-hover: null; // put a color if needed
 
 
 // Calculation
-$yupik-ui-breadcumb-arrow-height: $yupik-ui-breadcumb-height / 2;
-$yupik-ui-breadcumb-padding: $yupik-ui-breadcumb-height / 4;
+$yupik-breadcumb-arrow-height: $yupik-breadcumb-height / 2;
+$yupik-breadcumb-padding: $yupik-breadcumb-height / 4;
 
-.#{$yupik-ui-dropdown-namespace}breadcrumb,
-%#{$yupik-ui-dropdown-namespace}breadcrumb, {
+
+// The SCSS
+.#{$yupik-breadcrumb-namespace}breadcrumb,
+%#{$yupik-breadcrumb-namespace}breadcrumb, {
     @extend %clearfix;
-    background-color: $yupik-ui-breadcumb-arrow-color;
+    background-color: $yupik-breadcumb-arrow-color;
      
     li { position: relative; float: left } // todo: voir si extend dans inuit
 
     li:first-child .breadcrumb_item {
-        padding-left: $yupik-ui-breadcumb-padding;
+        padding-left: $yupik-breadcumb-padding;
 
         &:before { display: none }
     }
 
     li:last-child .breadcrumb_item {
-        padding-right: $yupik-ui-breadcumb-padding;
+        padding-right: $yupik-breadcumb-padding;
 
         &:after { display: none }
     }
 }
 
-    .#{$yupik-ui-dropdown-namespace}breadcrumb_item,
-    %#{$yupik-ui-dropdown-namespace}breadcrumb_item {
+    .#{$yupik-breadcrumb-namespace}breadcrumb_item,
+    %#{$yupik-breadcrumb-namespace}breadcrumb_item {
         position: relative;
         display: inline-block;
-        @include vertical-text-center($yupik-ui-breadcumb-height);
-        margin-right: $yupik-ui-breadcumb-arrow-width; padding-left: $yupik-ui-breadcumb-padding * 3;
-        background-color: $yupik-ui-breadcumb-background-color;
-        color: $yupik-ui-breadcumb-text-color;
+        @include vertical-text-center($yupik-breadcumb-height);
+        margin-right: $yupik-breadcumb-arrow-width; padding-left: $yupik-breadcumb-padding * 3;
+        background-color: $yupik-breadcumb-background-color;
+        color: $yupik-breadcumb-text-color;
 
         &:hover { text-decoration: none }
 
         &:before {
             content: "";  
-            border-top: $yupik-ui-breadcumb-arrow-height solid transparent;
-            border-bottom: $yupik-ui-breadcumb-arrow-height solid transparent;
-            border-left: $yupik-ui-breadcumb-arrow-height solid $yupik-ui-breadcumb-arrow-color;
+            border-top: $yupik-breadcumb-arrow-height solid transparent;
+            border-bottom: $yupik-breadcumb-arrow-height solid transparent;
+            border-left: $yupik-breadcumb-arrow-height solid $yupik-breadcumb-arrow-color;
             @include absolute(0 0); // == position: absolute; top: 0; left: 0
         }
 
         &:after {
             content: "";  
-            border-top: $yupik-ui-breadcumb-arrow-height solid transparent;
-            border-bottom: $yupik-ui-breadcumb-arrow-height solid transparent;
-            border-left: $yupik-ui-breadcumb-arrow-height solid $yupik-ui-breadcumb-background-color;
-            @include absolute(auto 0 ($yupik-ui-breadcumb-arrow-height * -1) ); z-index: 1;
+            border-top: $yupik-breadcumb-arrow-height solid transparent;
+            border-bottom: $yupik-breadcumb-arrow-height solid transparent;
+            border-left: $yupik-breadcumb-arrow-height solid $yupik-breadcumb-background-color;
+            @include absolute(auto 0 ($yupik-breadcumb-arrow-height * -1) ); z-index: 1;
         }
     }
 
 
-@if $yupik-ui-breadcumb-background-color-hover != null {
+@if $yupik-breadcumb-background-color-hover != null {
 
-    .#{$yupik-ui-dropdown-namespace}breadcrumb_item--link,
-    %#{$yupik-ui-dropdown-namespace}breadcrumb_item--link {
+    .#{$yupik-breadcrumb-namespace}breadcrumb_item--link,
+    %#{$yupik-breadcrumb-namespace}breadcrumb_item--link {
         text-decoration: none;
 
         &:hover {
-            background-color: $yupik-ui-breadcumb-background-color-hover;
+            background-color: $yupik-breadcumb-background-color-hover;
 
-            &:after { border-left-color: $yupik-ui-breadcumb-background-color-hover }
+            &:after { border-left-color: $yupik-breadcumb-background-color-hover }
         }
     }
 
 } // endif
 
 
-@if $yupik-ui-breadcumbtext-color-hover != null {
+@if $yupik-breadcumbtext-color-hover != null {
 
-    .#{$yupik-ui-dropdown-namespace}breadcrumb_item--link:hover,
-    %#{$yupik-ui-dropdown-namespace}breadcrumb_item--link:hover { 
-        color: $yupik-ui-breadcumbtext-color-hover;
+    .#{$yupik-breadcrumb-namespace}breadcrumb_item--link:hover,
+    %#{$yupik-breadcrumb-namespace}breadcrumb_item--link:hover { 
+        color: $yupik-breadcumbtext-color-hover;
     }
 
 } // endif
