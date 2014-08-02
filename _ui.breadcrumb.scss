@@ -1,6 +1,6 @@
 
 /* ------------------------------ */
-/* ::: Grand Wazoo Breadcrumb ::: */
+/* ::: Yupik Breadcrumb ::: */
 /* ------------------------------ */
 
 
@@ -15,86 +15,91 @@
 
 
 // Default variable
-$gw-ui-breadcrumb-namespace: $gw-namespace !default;
+$yupik-ui-breadcrumb-namespace: $yupik-namespace !default;
 
-$gw-ui-breadcumb-height: 40px;
-$gw-ui-breadcumb-arrow-width: 5px;
-$gw-ui-breadcumb-background-color: green;
-$gw-ui-breadcumb-background-color-hover: null; // put a color if needed
-$gw-ui-breadcumb-arrow-color: white;
-$gw-ui-breadcumb-text-color: white;
-$gw-ui-breadcumbtext-color-hover: null; // put a color if needed
+$yupik-ui-breadcumb-height: 40px;
+$yupik-ui-breadcumb-arrow-width: 5px;
+$yupik-ui-breadcumb-background-color: green;
+$yupik-ui-breadcumb-background-color-hover: null; // put a color if needed
+$yupik-ui-breadcumb-arrow-color: white;
+$yupik-ui-breadcumb-text-color: white;
+$yupik-ui-breadcumbtext-color-hover: null; // put a color if needed
 
 
 // Calculation
-$gw-ui-breadcumb-arrow-height: $gw-ui-breadcumb-height / 2;
-$gw-ui-breadcumb-padding: $gw-ui-breadcumb-height / 4;
+$yupik-ui-breadcumb-arrow-height: $yupik-ui-breadcumb-height / 2;
+$yupik-ui-breadcumb-padding: $yupik-ui-breadcumb-height / 4;
 
-.breadcrumb {
+.#{$yupik-ui-dropdown-namespace}breadcrumb,
+%#{$yupik-ui-dropdown-namespace}breadcrumb, {
     @extend %clearfix;
-    background-color: $gw-ui-breadcumb-arrow-color;
+    background-color: $yupik-ui-breadcumb-arrow-color;
      
-    li { float: left } // todo: voir si extend dans inuit
+    li { position: relative; float: left } // todo: voir si extend dans inuit
 
     li:first-child .breadcrumb_item {
-        padding-left: $gw-ui-breadcumb-padding;
+        padding-left: $yupik-ui-breadcumb-padding;
 
         &:before { display: none }
     }
 
     li:last-child .breadcrumb_item {
-        padding-right: $gw-ui-breadcumb-padding;
+        padding-right: $yupik-ui-breadcumb-padding;
 
         &:after { display: none }
     }
 }
 
-    .breadcrumb_item {
+    .#{$yupik-ui-dropdown-namespace}breadcrumb_item,
+    %#{$yupik-ui-dropdown-namespace}breadcrumb_item {
         position: relative;
         display: inline-block;
-        //@include alignVertically($gw-ui-breadcumb-height);
-        height: $gw-ui-breadcumb-height; line-height: $gw-ui-breadcumb-height;
-        margin-right: $gw-ui-breadcumb-arrow-width; padding-left: $gw-ui-breadcumb-padding * 3;
-        background-color: $gw-ui-breadcumb-background-color;
-        color: $gw-ui-breadcumb-text-color;
+        @include vertical-text-center($yupik-ui-breadcumb-height);
+        margin-right: $yupik-ui-breadcumb-arrow-width; padding-left: $yupik-ui-breadcumb-padding * 3;
+        background-color: $yupik-ui-breadcumb-background-color;
+        color: $yupik-ui-breadcumb-text-color;
 
         &:hover { text-decoration: none }
 
         &:before {
             content: "";  
-            border-top: $gw-ui-breadcumb-arrow-height solid transparent;
-            border-bottom: $gw-ui-breadcumb-arrow-height solid transparent;
-            border-left: $gw-ui-breadcumb-arrow-height solid $gw-ui-breadcumb-arrow-color;
+            border-top: $yupik-ui-breadcumb-arrow-height solid transparent;
+            border-bottom: $yupik-ui-breadcumb-arrow-height solid transparent;
+            border-left: $yupik-ui-breadcumb-arrow-height solid $yupik-ui-breadcumb-arrow-color;
             @include absolute(0 0); // == position: absolute; top: 0; left: 0
         }
 
         &:after {
             content: "";  
-            border-top: $gw-ui-breadcumb-arrow-height solid transparent;
-            border-bottom: $gw-ui-breadcumb-arrow-height solid transparent;
-            border-left: $gw-ui-breadcumb-arrow-height solid $gw-ui-breadcumb-background-color;
-            @include absolute(auto 0 ($gw-ui-breadcumb-arrow-height * -1) ); z-index: 1;
+            border-top: $yupik-ui-breadcumb-arrow-height solid transparent;
+            border-bottom: $yupik-ui-breadcumb-arrow-height solid transparent;
+            border-left: $yupik-ui-breadcumb-arrow-height solid $yupik-ui-breadcumb-background-color;
+            @include absolute(auto 0 ($yupik-ui-breadcumb-arrow-height * -1) ); z-index: 1;
         }
     }
 
 
-@if $gw-ui-breadcumb-background-color-hover != null {
+@if $yupik-ui-breadcumb-background-color-hover != null {
 
-    .breadcrumb_item--link {
+    .#{$yupik-ui-dropdown-namespace}breadcrumb_item--link,
+    %#{$yupik-ui-dropdown-namespace}breadcrumb_item--link {
         text-decoration: none;
 
         &:hover {
-            background-color: $gw-ui-breadcumb-background-color-hover;
+            background-color: $yupik-ui-breadcumb-background-color-hover;
 
-            &:after { border-left-color: $gw-ui-breadcumb-background-color-hover }
+            &:after { border-left-color: $yupik-ui-breadcumb-background-color-hover }
         }
     }
 
 } // endif
 
 
-@if $gw-ui-breadcumbtext-color-hover != null {
+@if $yupik-ui-breadcumbtext-color-hover != null {
 
-    .breadcrumb_item--link:hover { color: $gw-ui-breadcumbtext-color-hover }
+    .#{$yupik-ui-dropdown-namespace}breadcrumb_item--link:hover,
+    %#{$yupik-ui-dropdown-namespace}breadcrumb_item--link:hover { 
+        color: $yupik-ui-breadcumbtext-color-hover;
+    }
 
 } // endif
