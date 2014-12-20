@@ -4,26 +4,38 @@
 /* ------------------------------ */
 
 
-/* The html
+ // The html
 
-    <ul class="breadcrumb">
-        <li><a class="breadcrumb_item breadcrumb_item--link" href="#">Home</a></li>
-        <li><a class="breadcrumb_item breadcrumb_item--link" href="#">Category</a></li>
-        <li><span class="breadcrumb_item">Product</span></li>
-    </ul>
- */
+ //    <ul class="breadcrumb">
+ //        <li>
+ //            <a class="breadcrumb_item breadcrumb_item--link" href="#">
+ //                Home
+ //            </a>
+ //        </li>
+ //        <li>   
+ //            <a class="breadcrumb_item breadcrumb_item--link" href="#">
+ //                Category
+ //            </a>
+ //        </li>
+ //        <li>
+ //            <span class="breadcrumb_item">
+ //                Product
+ //            </span>
+ //        </li>
+ //    </ul>
+
 
 
 // Default variable
 $yupik-breadcrumb-namespace: $inuit-namespace !default;
 
-$yupik-breadcumb-height: 40px;
-$yupik-breadcumb-arrow-width: 5px;
-$yupik-breadcumb-background-color: green;
-$yupik-breadcumb-background-color-hover: null; // put a color if needed
-$yupik-breadcumb-arrow-color: white;
-$yupik-breadcumb-text-color: white;
-$yupik-breadcumbtext-color-hover: null; // put a color if needed
+$yupik-breadcumb-height: 40px !default;
+$yupik-breadcumb-arrow-width: 5px !default;
+$yupik-breadcumb-background-color: green !default;
+$yupik-breadcumb-background-color-hover: null !default; // put a color if needed
+$yupik-breadcumb-arrow-color: white !default;
+$yupik-breadcumb-text-color: white !default;
+$yupik-breadcumb-text-color-hover: null !default; // put a color if needed
 
 
 // Calculation
@@ -52,8 +64,8 @@ $yupik-breadcumb-padding: $yupik-breadcumb-height / 4;
     }
 }
 
-    .#{$yupik-breadcrumb-namespace}breadcrumb_item,
-    %#{$yupik-breadcrumb-namespace}breadcrumb_item {
+    .#{$yupik-breadcrumb-namespace}breadcrumb__item,
+    %#{$yupik-breadcrumb-namespace}breadcrumb__item {
         position: relative;
         display: inline-block;
         @include vertical-text-center($yupik-breadcumb-height);
@@ -68,7 +80,7 @@ $yupik-breadcumb-padding: $yupik-breadcumb-height / 4;
             border-top: $yupik-breadcumb-arrow-height solid transparent;
             border-bottom: $yupik-breadcumb-arrow-height solid transparent;
             border-left: $yupik-breadcumb-arrow-height solid $yupik-breadcumb-arrow-color;
-            @include absolute(0 0); // == position: absolute; top: 0; left: 0
+            position: absolute; top: 0; left: 0
         }
 
         &:after {
@@ -76,15 +88,18 @@ $yupik-breadcumb-padding: $yupik-breadcumb-height / 4;
             border-top: $yupik-breadcumb-arrow-height solid transparent;
             border-bottom: $yupik-breadcumb-arrow-height solid transparent;
             border-left: $yupik-breadcumb-arrow-height solid $yupik-breadcumb-background-color;
-            @include absolute(auto 0 ($yupik-breadcumb-arrow-height * -1) ); z-index: 1;
+            position: absolute;
+            top: 0;
+            right: $yupik-breadcumb-arrow-height * -1; 
+            z-index: 1;
         }
     }
 
 
 @if $yupik-breadcumb-background-color-hover != null {
 
-    .#{$yupik-breadcrumb-namespace}breadcrumb_item--link,
-    %#{$yupik-breadcrumb-namespace}breadcrumb_item--link {
+    .#{$yupik-breadcrumb-namespace}breadcrumb__item--link,
+    %#{$yupik-breadcrumb-namespace}breadcrumb__item--link {
         text-decoration: none;
 
         &:hover {
@@ -97,11 +112,11 @@ $yupik-breadcumb-padding: $yupik-breadcumb-height / 4;
 } // endif
 
 
-@if $yupik-breadcumbtext-color-hover != null {
+@if $yupik-breadcumb-text-color-hover != null {
 
-    .#{$yupik-breadcrumb-namespace}breadcrumb_item--link:hover,
-    %#{$yupik-breadcrumb-namespace}breadcrumb_item--link:hover { 
-        color: $yupik-breadcumbtext-color-hover;
+    .#{$yupik-breadcrumb-namespace}breadcrumb__item--link:hover,
+    %#{$yupik-breadcrumb-namespace}breadcrumb__item--link:hover { 
+        color: $yupik-breadcumb-text-color-hover;
     }
 
 } // endif
