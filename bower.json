@@ -5,7 +5,7 @@
   "authors": [
     "laurentperroteau <laurentperroteau@gmail.com>"
   ],
-  "description": "Styling breadcrumb with arrows (and a link optionally)",
+  "description": "Styling arrow-shaped breadcrumb",
   "main": "_ui.breadcrumb.scss",
   "keywords": [
     "grandwazoo",

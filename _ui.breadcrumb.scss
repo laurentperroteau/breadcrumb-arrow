@@ -1,24 +1,24 @@
 
-/* ------------------------------ */
+/* ------------------------ */
 /* ::: Yupik Breadcrumb ::: */
-/* ------------------------------ */
+/* ------------------------ */
 
 
  // The html
 
  //    <ul class="breadcrumb">
  //        <li>
- //            <a class="breadcrumb_item breadcrumb_item--link" href="#">
+ //            <a class="breadcrumb__item breadcrumb_item--link" href="#">
  //                Home
  //            </a>
  //        </li>
  //        <li>   
- //            <a class="breadcrumb_item breadcrumb_item--link" href="#">
+ //            <a class="breadcrumb__item breadcrumb_item--link" href="#">
  //                Category
  //            </a>
  //        </li>
  //        <li>
- //            <span class="breadcrumb_item">
+ //            <span class="breadcrumb__item">
  //                Product
  //            </span>
  //        </li>
@@ -31,7 +31,7 @@ $yupik-breadcrumb-namespace: $inuit-namespace !default;
 
 $yupik-breadcumb-height: 40px !default;
 $yupik-breadcumb-arrow-width: 5px !default;
-$yupik-breadcumb-background-color: green !default;
+$yupik-breadcumb-background-color: #db6313 !default;
 $yupik-breadcumb-background-color-hover: null !default; // put a color if needed
 $yupik-breadcumb-arrow-color: white !default;
 $yupik-breadcumb-text-color: white !default;
@@ -49,7 +49,7 @@ $yupik-breadcumb-padding: $yupik-breadcumb-height / 4;
     @extend %clearfix;
     background-color: $yupik-breadcumb-arrow-color;
      
-    li { position: relative; float: left } // todo: voir si extend dans inuit
+    li { position: relative; float: left } 
 
     li:first-child .breadcrumb_item {
         padding-left: $yupik-breadcumb-padding;
