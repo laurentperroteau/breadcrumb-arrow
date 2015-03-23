@@ -1,11 +1,11 @@
 Yupik Breadcrumb
 ================
 
-## reworking in progress !
-
 ### Styling arrow-shaped breadcrumb
 
->  Work in all browser (IE8+).
+> Is part of [Yupik collection of modules](https://github.com/laurentperroteau/yupik)
+
+Work in all browser (IE8+), see [__DEMO__](http://codepen.io/laurentperroteau/pen/bNeQxp?editors=110).
 
 Install using Bower:
 
